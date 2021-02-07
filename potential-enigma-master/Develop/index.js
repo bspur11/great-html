@@ -1,15 +1,13 @@
 // TODO: Include packages needed for this application
 
+function init () {
+
 const inquirer = require('inquirer');
 const fs = require('fs');
 const generateMarkdown = require('./utils/generateMarkdown.js');
 const path = require('path');
 
-// If there's no 'projects' array property, create one
 
-// if (!portfolioData.projects) {
-//   portfolioData.projects = [];
-// }
 
 // TODO: Create an array of questions for user input
 
@@ -72,25 +70,7 @@ const path = require('path');
 .then((response) => {
   return fs.writeFileSync(path.join (process.cwd(), "README.md"), generate(response));
 });
-
+}
 // TODO: Create a function to initialize app
-// function init() {}
 
-// function init() {
-//   prompt(questions).then(answers => {
-
-//     const response = generateMarkdown(answers);
-//     console.log(answers);
-
-//     writeToFile("README.md", response);
-
-//   })
-
-
-// }
-
-
-
-
-// Function call to initialize app
 init();
